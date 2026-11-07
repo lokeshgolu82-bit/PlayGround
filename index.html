@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#a9d8d1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233e7e65'/%3E%3Cpath d='M7 22h6V11H7zm7 0h5V6h-5zm6 0h5V14h-5z' fill='%23f2d896'/%3E%3C/svg%3E" />
+  <title>Wildfern — A Tiny Voxel World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game">
+    <canvas id="world" aria-label="3D voxel world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><b>WILDFERN</b><small>POCKET WORLDS</small></div></div>
+      <div class="world-chip"><i></i><span>THE MEADOW</span><em>DAY 01</em></div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound"><span class="sound-icon">♪</span></button>
+    </header>
+    <section class="status-card"><div class="sun-icon">☀</div><div><b>Clear skies</b><small>Perfect day to wander</small></div><div class="weather-bars"><i></i><i></i><i></i><i></i></div></section>
+    <div class="aim"><span></span><i></i></div>
+    <div class="target-label" id="targetLabel">GRASS BLOCK</div>
+    <div class="hint-pill" id="hintPill">TAP A BLOCK TO GATHER</div>
+    <div class="bottom-ui">
+      <div class="inventory-title"><span>YOUR PACK</span><span id="packCount">3 / 24</span></div>
+      <div class="hotbar" id="hotbar"></div>
+      <div class="mobile-controls">
+        <div class="move-pad" id="movePad"><div class="pad-ring"><div class="pad-stick" id="padStick"></div></div><span class="pad-label">MOVE</span></div>
+        <div class="action-pad"><button id="jumpBtn" class="round-action jump-action"><span>↑</span><small>JUMP</small></button><button id="placeBtn" class="round-action place-action"><span>＋</span><small>PLACE</small></button><button id="mineBtn" class="round-action mine-action"><span>✦</span><small>MINE</small></button></div>
+      </div>
+    </div>
+    <div class="desktop-help">W A S D <span>move</span><b>·</b> mouse <span>look</span><b>·</b> click <span>mine</span><b>·</b> right click <span>place</span><b>·</b> space <span>jump</span></div>
+    <div id="toast" class="toast"></div>
+    <div id="intro" class="intro">
+      <div class="intro-card">
+        <div class="intro-kicker"><span></span> YOUR LITTLE CORNER OF THE WILD</div>
+        <div class="intro-art"><div class="art-sun"></div><div class="art-hill hill-back"></div><div class="art-hill hill-front"></div><div class="art-tree"><i></i><b></b></div><div class="art-flower flower-one">✿</div><div class="art-flower flower-two">✿</div></div>
+        <h1>A world<br>of your <em>own.</em></h1>
+        <p>Wander through a pocket-sized meadow.<br>Gather, build, and make it yours.</p>
+        <button id="playBtn" class="play-btn">STEP INTO THE MEADOW <span>↗</span></button>
+        <div class="intro-foot"><span>✦</span> NO RULES. JUST ROOM TO GROW.</div>
+      </div>
+    </div>
+    <div id="pauseScreen" class="pause-screen hidden"><div class="pause-card"><span class="pause-symbol">Ⅱ</span><h2>Take a breath.</h2><p>Your meadow isn't going anywhere.</p><button id="resumeBtn" class="play-btn">BACK TO WANDERING <span>↗</span></button></div></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

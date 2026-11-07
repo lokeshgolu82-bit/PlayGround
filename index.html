@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#90d6f1" />
+  <title>Blockhaven — a little world of your own</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game" aria-label="Blockhaven 3D game">
+    <canvas id="world"></canvas>
+    <div class="vignette"></div>
+
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><b>blockhaven</b><small>YOUR LITTLE WORLD</small></div></div>
+      <div class="top-actions">
+        <div class="day-pill"><span class="sun-mini">☀</span><span>DAY <b id="day-count">01</b></span></div>
+        <button class="icon-btn" id="sound-btn" aria-label="Toggle sound"><span id="sound-icon">♪</span></button>
+        <button class="icon-btn pause-btn" id="pause-btn" aria-label="Pause game"><span>Ⅱ</span></button>
+      </div>
+    </header>
+
+    <section class="quest-card">
+      <div class="quest-icon">✦</div><div class="quest-copy"><small>YOUR FIRST DAY</small><b id="quest-text">Make yourself at home</b><div class="quest-progress"><i id="quest-progress"></i></div></div><span class="quest-count" id="quest-count">0 / 3</span>
+    </section>
+
+    <div class="crosshair"><i></i><i></i></div>
+    <div class="look-hint" id="look-hint"><span>＋</span> Drag to look around</div>
+
+    <section class="interaction" id="interaction"><span class="interaction-key">E</span><span id="interaction-text">Collect block</span></section>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="mobile-controls" id="mobile-controls">
+      <div class="joystick" id="joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div><span class="joy-label">MOVE</span></div>
+      <div class="touch-actions"><button class="action-btn break-btn" id="break-btn"><span class="action-symbol">⛏</span><small>MINE</small></button><button class="action-btn place-btn" id="place-btn"><span class="action-symbol">＋</span><small>PLACE</small></button><button class="jump-btn" id="jump-btn">↑</button></div>
+    </div>
+
+    <nav class="hotbar-wrap" aria-label="Block inventory">
+      <div class="inventory-label"><span>BACKPACK</span><span id="inventory-count">9 blocks</span></div>
+      <div class="hotbar" id="hotbar"></div>
+    </nav>
+    <div class="desktop-help"><kbd>W A S D</kbd> move <kbd>mouse</kbd> look <kbd>click</kbd> mine <kbd>right click</kbd> place <kbd>space</kbd> jump</div>
+
+    <div class="modal hidden" id="modal">
+      <div class="modal-card" id="modal-card">
+        <div class="modal-emblem">▧</div><p class="eyebrow">A WORLD, JUST FOR YOU</p><h1 id="modal-title">Take a little<br><em>breather.</em></h1><p class="modal-desc" id="modal-desc">Your island will be right here when you’re ready.</p>
+        <button class="primary-btn" id="resume-btn">Back to my island <span>→</span></button>
+        <div class="modal-tip">A tiny world. A slower pace. Your rules.</div>
+      </div>
+    </div>
+    <div class="toast-bottom">A tiny world. A slower pace. Your rules.</div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
